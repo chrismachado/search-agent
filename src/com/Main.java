@@ -12,15 +12,15 @@ public class Main {
         arad.setNeighbor(new Node[]{sibiu});
         sibiu.setNeighbor(new Node[]{fagaras, arad});
         fagaras.setNeighbor(new Node[]{bucharest, sibiu});
-        bucharest.setNeighbor(new Node[]{fagaras}});
+        bucharest.setNeighbor(new Node[]{fagaras});
 
         //Este comentario é para testar
-
+        //.
 
 
         for (City city : City.values()) {
             System.out.println("Current city is : " + city.name());
         }
-
+        
     }
 }
