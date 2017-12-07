@@ -21,6 +21,8 @@ public class Node {
 
 
     public void addSon(Node son) {
+        if(sons == null) return;
+
         Node[] oldSons = sons;
         Node newSons[] = new Node[oldSons.length];
 
@@ -62,5 +64,10 @@ public class Node {
 
     public void setNeighbor(Node[] neighbor) {
         this.neighbor = neighbor;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

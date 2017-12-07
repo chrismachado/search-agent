@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AgentDFS implements AbstractAgent {
     private List<Node> fringe = new ArrayList<Node>();
-    private List<Node> solution = null;
+    private List<Node> solution = new ArrayList<Node>();
     private Tree tree = new Tree();
 
     @Override
@@ -13,18 +13,31 @@ public class AgentDFS implements AbstractAgent {
         fringe.add(start);
         Node current = null;
 
-        while(fringe != null) {
-            current = extractFringe();
 
-            if(current.getName() == goal.getName()) {
-                while(current.getParent() != null) {
-                    solution.add(current.getParent());
+        while(fringe != null) {
+            if(fringe == null) {
+                System.out.println("Falha ao alcançar objetivo");
+                return null;
+            }
+
+            if(current != null && current.getName() == goal.getName()) {
+                System.out.println("Objetivo alcançado. Gerando caminho...");
+                while(current != null) {
+                    solution.add(current);
                     current = current.getParent();
                 }
                 return solution;
-            } else
-                tree.insert(current, null);
+
+            } else {
+                current = extractFringe();
                 fringe = expand(current.getNeighbor());
+
+                if (fringe.isEmpty())
+                    tree.insert(fringe.get(0));
+                else
+                    tree.insert(fringe.get(0), current);
+            }
+//            System.out.println(current.getName());
         }
 
         return solution;

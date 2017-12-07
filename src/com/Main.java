@@ -17,11 +17,10 @@ public class Main {
         fagaras.setNeighbor(new Node[]{bucharest, sibiu});
         bucharest.setNeighbor(new Node[]{fagaras});
 
-//
-//        List<Node> t = new ArrayList<Node>();
-//
-//        System.out.println(t.get(0));
-
+        AgentDFS agente = new AgentDFS();
+        List<Node> solution = agente.search(arad,fagaras);
+        System.out.println(solution);
+//        System.out.println(agente.search(arad,sibiu));
 
 
     }
