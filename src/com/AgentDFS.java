@@ -25,6 +25,8 @@ public class AgentDFS implements AbstractAgent {
                 while(current != null) {
                     solution.add(current);
                     current = current.getParent();
+                    System.out.println("This is current : " + current);
+                    System.out.println("This is current's parent : " + current.getParent());
                 }
                 return solution;
 
@@ -32,12 +34,16 @@ public class AgentDFS implements AbstractAgent {
                 current = extractFringe();
                 fringe = expand(current.getNeighbor());
 
+                // ========================================================
+                //              ERRO A PARTIR DAQUI
+                // ========================================================
+
                 if (fringe.isEmpty())
                     tree.insert(fringe.get(0));
                 else
                     tree.insert(fringe.get(0), current);
             }
-//            System.out.println(current.getName());
+            System.out.println(current.getName());
         }
 
         return solution;

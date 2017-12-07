@@ -18,9 +18,8 @@ public class Main {
         bucharest.setNeighbor(new Node[]{fagaras});
 
         AgentDFS agente = new AgentDFS();
-        List<Node> solution = agente.search(arad,fagaras);
+        List<Node> solution = agente.search(arad,bucharest);
         System.out.println(solution);
-//        System.out.println(agente.search(arad,sibiu));
 
 
     }
