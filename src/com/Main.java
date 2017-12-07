@@ -1,5 +1,8 @@
 package com;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -15,10 +18,10 @@ public class Main {
         bucharest.setNeighbor(new Node[]{fagaras});
 
 
+        List<Node> t = new ArrayList<Node>();
+        System.out.println(t.get(0));
 
-        for (City city : City.values()) {
-            System.out.println("Current city is : " + city.name());
-        }
+
 
     }
 }

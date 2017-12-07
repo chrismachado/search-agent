@@ -3,7 +3,7 @@ package com;
 public class Node {
 
     private Node parent = null;
-    private Node[] sons = null, neighbor;
+    private Node[] sons = null, neighbor = null;
     private String name = "";
     //private int cust = 0;
 
@@ -20,6 +20,17 @@ public class Node {
 //    }
 
 
+    public void addSon(Node son) {
+        Node[] oldSons = sons;
+        Node newSons[oldSons.length];
+
+        for (int i = 0; i < oldSons.length; i++)
+            newSons[i] = oldSons[i];
+
+        newSons[oldSons.length] = son;
+
+    }
+
     public Node getParent() {
         return parent;
     }
@@ -35,6 +46,7 @@ public class Node {
     public void setSons(Node[] sons) {
         this.sons = sons;
     }
+
 
     public String getName() {
         return name;
