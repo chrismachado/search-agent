@@ -14,8 +14,6 @@ public class Main {
         fagaras.setNeighbor(new Node[]{bucharest, sibiu});
         bucharest.setNeighbor(new Node[]{fagaras});
 
-        //Este comentario é para testar
-        //.
 
 
         for (City city : City.values()) {
