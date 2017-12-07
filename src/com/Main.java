@@ -21,6 +21,6 @@ public class Main {
         for (City city : City.values()) {
             System.out.println("Current city is : " + city.name());
         }
-        
+
     }
 }
