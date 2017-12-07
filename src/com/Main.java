@@ -17,9 +17,10 @@ public class Main {
         fagaras.setNeighbor(new Node[]{bucharest, sibiu});
         bucharest.setNeighbor(new Node[]{fagaras});
 
-
-        List<Node> t = new ArrayList<Node>();
-        System.out.println(t.get(0));
+//
+//        List<Node> t = new ArrayList<Node>();
+//
+//        System.out.println(t.get(0));
 
 
 

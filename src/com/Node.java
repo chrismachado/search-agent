@@ -22,7 +22,7 @@ public class Node {
 
     public void addSon(Node son) {
         Node[] oldSons = sons;
-        Node newSons[oldSons.length];
+        Node newSons[] = new Node[oldSons.length];
 
         for (int i = 0; i < oldSons.length; i++)
             newSons[i] = oldSons[i];

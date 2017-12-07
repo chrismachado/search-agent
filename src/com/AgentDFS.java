@@ -23,7 +23,7 @@ public class AgentDFS implements AbstractAgent {
                 }
                 return solution;
             } else
-                tree.insert(current, );
+                tree.insert(current, null);
                 fringe = expand(current.getNeighbor());
         }
 
