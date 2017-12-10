@@ -42,12 +42,14 @@ public class AgentUCS implements AbstractAgent, Comparator<Node> {
                     child.setParent(current);
                     queue.add(child);
 
-                    System.out.println(child);
-                    System.out.println(queue);
+                    System.out.println("Current Node = " + current);
+                    System.out.println("Expand Node = " + child);
+                    System.out.println("Fringe = " + queue);
                     System.out.println();
                 } else if(queue.contains(child) &&
                         (child.getPathCost() > current.getPathCost())) {
                     child.setParent(current);
+                    child.setPathCost(current.getPathCost() + cost);
                     queue.remove(child);
                     queue.add(child);
 
