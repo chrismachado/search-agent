@@ -11,7 +11,7 @@ public class Main {
 
         RomaniaMap romania = new RomaniaMap();
 
-        AbstractAgent agent = new AgentUCS(romenia.oradea(),romenia.craiova());
+        AbstractAgent agent = new AgentUCS(romania.oradea(),romania.craiova());
 
         agent.search();
     }
