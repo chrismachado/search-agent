@@ -3,7 +3,7 @@ package main;
 import interfaces.AbstractAgent;
 import resource.Edge;
 import resource.Node;
-import resource.RomeniaMap;
+import resource.RomaniaMap;
 import search.AgentUCS;
 
 public class Main {
