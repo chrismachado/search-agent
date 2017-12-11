@@ -2,7 +2,7 @@ package resource;
 
 public class RomeniaMap {
 
-    private Node arad, zerind, oradea, sibiu, fagaras, vilcea, pitesti, timesoara, lugoj, mehadia, drobeta, craiova, bucharest, giurgiu, urziceni, hirsova, eforie, vaslui, iasi, neamt;
+    private Node arad, zerind, oradea, sibiu, fagaras, vilcea, pitesti, timisoara, lugoj, mehadia, drobeta, craiova, bucharest, giurgiu, urziceni, hirsova, eforie, vaslui, iasi, neamt;
 
 
 
@@ -19,7 +19,7 @@ public class RomeniaMap {
         this.fagaras = new Node("Fagaras");
         this.vilcea = new Node("Reimnicu Vilcea");
         this.pitesti = new Node("Pitesti");
-        this.timesoara = new Node("Timesoara");
+        this.timisoara = new Node("Timisoara");
         this.lugoj = new Node("Lugoj");
         this.mehadia = new Node("Mehadia");
         this.drobeta = new Node("Drobeta");
@@ -38,7 +38,7 @@ public class RomeniaMap {
         arad.setAdjacencies(new Edge[]{
                 new Edge(zerind,75),
                 new Edge(sibiu,140),
-                new Edge(timesoara,118)
+                new Edge(timisoara,118)
         });
 
         zerind.setAdjacencies(new Edge[]{
@@ -75,13 +75,13 @@ public class RomeniaMap {
                 new Edge(craiova,138)
         });
 
-        timesoara.setAdjacencies(new Edge[]{
+        timisoara.setAdjacencies(new Edge[]{
                 new Edge(arad,118),
                 new Edge(lugoj,111)
         });
 
         lugoj.setAdjacencies(new Edge[]{
-                new Edge(timesoara,111),
+                new Edge(timisoara,111),
                 new Edge(mehadia,70)
         });
 
@@ -165,8 +165,8 @@ public class RomeniaMap {
         return pitesti;
     }
 
-    public Node timesoara() {
-        return timesoara;
+    public Node timisoara() {
+        return timisoara;
     }
 
     public Node lugoj() {
