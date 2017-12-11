@@ -9,7 +9,7 @@ import search.AgentUCS;
 public class Main {
     public static void main(String[] args) {
 
-        RomeniaMap romenia = new RomeniaMap();
+        RomaniaMap romania = new RomeniaMap();
 
         AbstractAgent agent = new AgentUCS(romenia.oradea(),romenia.craiova());
 
