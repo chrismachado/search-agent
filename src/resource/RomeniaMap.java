@@ -1,12 +1,12 @@
 package resource;
 
-public class RomeniaMap {
+public class RomaniaMap {
 
     private Node arad, zerind, oradea, sibiu, fagaras, vilcea, pitesti, timisoara, lugoj, mehadia, drobeta, craiova, bucharest, giurgiu, urziceni, hirsova, eforie, vaslui, iasi, neamt;
 
 
 
-    public RomeniaMap() {
+    public RomaniaMap() {
         createCities();
         neighborRelationship();
     }
