@@ -1,8 +1,6 @@
 package main;
 
 import interfaces.AbstractAgent;
-import resource.Edge;
-import resource.Node;
 import resource.RomaniaMap;
 import search.AgentUCS;
 
