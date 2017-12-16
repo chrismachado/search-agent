@@ -1,4 +1,4 @@
-# IA - agentes de busca
+# IA - Search Agent
 
 ## Resources
 
