@@ -14,7 +14,12 @@ public class AgentBFS implements AbstractAgent {
     private Set<Node> explored;
     private boolean found;
 
-    public AgentBFS() {    }
+    public AgentBFS(Node source, Node goals, Set<Node> explored, boolean found) {
+        this.source = source;
+        this.goals = goals;
+        this.explored = explored;
+        this.found = found;
+    }
 
     public AgentBFS(Node source, Node goals) {
         this.source = source;
@@ -43,7 +48,7 @@ public class AgentBFS implements AbstractAgent {
                     queue.add(child);
                 }
             }
-        } while(!queue.isEmpty());
+        } while(!queue.isEmpty() && !found);
 
         System.out.println("=============     PATH     =============");
         System.out.println(printPath(goals));
@@ -63,5 +68,23 @@ public class AgentBFS implements AbstractAgent {
         return path;
     }
 
+    protected Node getSource() {
+        return source;
+    }
 
+    protected Node getGoals() {
+        return goals;
+    }
+
+    protected Set<Node> getExplored() {
+        return explored;
+    }
+
+    protected boolean isFound() {
+        return found;
+    }
+
+    protected void setFound(boolean found) {
+        this.found = found;
+    }
 }
