@@ -11,6 +11,14 @@ public class Node {
         this.value = value;
     }
 
+    public int depth(Node node){
+        int depth = 0;
+        while (node.getParent()!=null){
+            depth++;
+        }
+        return depth;
+    }
+
     public String getValue() {
         return value;
     }
