@@ -29,18 +29,17 @@ public class AgentDLS implements AbstractAgent{
         this.stack.push(source);
         Node current;
 
-        while(!stack.empty() && !found){
+        while(!stack.isEmpty() && !found){
             current = stack.pop();
             visited.add(current);
 
-            if (current.depth(current)<=limit){
+            if (current.depth(current)<(limit+1)){
                 if (current.equals(goals))
                     found = true;
 
                 for(Edge e: current.getAdjacencies()){
                     Node child = e.getTarget();
-
-                    if (!stack.contains(child) && !visited.contains(child)){
+                    if (!stack.contains(child) && !visited.contains(child)) {
                         child.setParent(current);
                         stack.push(child);
                     }
@@ -52,8 +51,11 @@ public class AgentDLS implements AbstractAgent{
             }
         }
 
-        if (found)
-            printPath(goals);
+        if (found) {
+            System.out.println("=============     PATH     =============");
+            System.out.println(printPath(goals));
+            System.out.println("========================================");
+        }
     }
 
     @Override

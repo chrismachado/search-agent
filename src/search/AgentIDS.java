@@ -7,7 +7,7 @@ import java.util.List;
 
 public class AgentIDS implements AbstractAgent{
     private Node goals, source;
-    
+
     public AgentIDS(Node source, Node goals){
         this.source = source;
         this.goals = goals;
