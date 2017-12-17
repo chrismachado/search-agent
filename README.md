@@ -2,9 +2,10 @@
 
 ## Resources
 
-- \+ AgentUCS (Uniform-Cost Search)
-- \- AgentBFS (Breadth-First Search)
-- \- AgentDFS (Depth-First Search)
-- \- AgentDFS com vetor de visitados
-- \- AgentDFS com profundidade limitada
-- \- AgentDFS com aprofundamento iterativo
+- \+ AgentUCS (Uniform-Cost Search).
+- \+ AgentBFS (Breadth-First Search).
+- \+ AgentDFS (Depth-First Search).
+- \+ AgentDFS with visited vector.
+- \+ AgentDFS with limited depth.
+- \+ AgentDFS with iterative deepening.
+- \- AgentBD with bidirectional search.
