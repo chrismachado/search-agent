@@ -41,7 +41,7 @@ public class AgentDFS implements AbstractAgent {
                     stack.push(child);
                 }
             }
-        } while (!stack.isEmpty());
+        } while (!stack.isEmpty() && !found);
 
         System.out.println("=============     PATH     =============");
         System.out.println(printPath(goals));

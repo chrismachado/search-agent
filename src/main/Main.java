@@ -12,7 +12,7 @@ public class Main {
 
         RomaniaMap romania = new RomaniaMap();
 
-        AbstractAgent agent = new AgentDFSraw(romania.oradea(),romania.craiova());
+        AbstractAgent agent = new AgentDFS(romania.oradea(),romania.craiova());
 
         agent.search();
 

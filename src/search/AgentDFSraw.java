@@ -34,7 +34,7 @@ public class AgentDFSraw implements AbstractAgent {
                 Node child = e.getTarget();
                 stack.push(child);
             }
-        } while (!stack.isEmpty());
+        } while (!stack.isEmpty() && !found);
 
         System.out.println("=============     PATH     =============");
         System.out.println(printPath(goals));
