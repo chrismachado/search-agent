@@ -16,11 +16,11 @@ The other agents are a variation of these two.
 - \+ AgentUCS (Uniform-Cost Search).
 - \+ AgentBFS (Breadth-First Search).
 - \+ AgentDFS (Depth-First Search).
-- \- AgentDFS with visited vector.
+- \+ AgentDFS with visited vector.
 - \- AgentDFS with limited depth.
 - \- AgentDFS with iterative deepening.
 
 
 
 
-    ![Romania's Map](http://robotics.cs.tamu.edu/dshell/cs625/images/map2.gif)
+    ![Romania's Map](http://i1.wp.com/aiandgames.com/wp-content/uploads/2015/12/romania-graph.png)
