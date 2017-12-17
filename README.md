@@ -23,4 +23,4 @@ The other agents are a variation of these two.
 
 
 
-    ![Romania's Map](http://lh5.ggpht.com/-9mg2gY9TBwY/Twnb_8LkSrI/AAAAAAAAAJg/kMFzVVnfHtM/tree-search-space-states_thumb%25255B1%25255D.jpg?imgmax=800)
+    ![Romania's Map](http://robotics.cs.tamu.edu/dshell/cs625/images/map2.gif)
