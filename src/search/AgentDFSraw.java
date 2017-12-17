@@ -6,7 +6,7 @@ import resource.Node;
 
 import java.util.*;
 
-//asdasdas
+
 public class AgentDFSraw implements AbstractAgent {
 
     private Node source, goals;
