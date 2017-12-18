@@ -1,51 +1,49 @@
 package search;
 
-import interfaces.AbstractAgent;
 import resource.Edge;
 import resource.Node;
 
 import java.util.*;
 
 
-public class AgentDFS implements AbstractAgent {
+public class AgentDFS extends AgentDFSraw {
 
-    private Node source, goals;
-    private Stack<Node> stack;
     private Set<Node> explored;
-    private boolean found;
 
     public AgentDFS(Node source, Node goals) {
-        this.source = source;
-        this.goals = goals;
-        this.stack = new Stack<Node>();
+        super(source, goals, new Stack<Node>(), false);
         this.explored = new HashSet<Node>();
-        this.found = false;
     }
 
     @Override
     public void search() {
-        this.stack.push(source);
+        super.getStack().push(super.getSource());
         Node current;
         do {
-            current = stack.pop();
+            current = super.getStack().pop();
             explored.add(current);
 
-            if (current.getValue().equals(goals.getValue()))
-                found = true;
+            if (current.getValue().equals(super.getGoals().getValue()))
+                super.setFound(true);
 
             for (Edge e : current.getAdjacencies()) {
-                Node child = e.getTarget();
+                    Node child = e.getTarget();
 
-                if (!explored.contains(child) && !stack.contains(child)) {
+                if (!explored.contains(child) && !super.getStack().contains(child)) {
                     child.setParent(current);
-                    stack.push(child);
+                    super.getStack().push(child);
                 }
-            }
-        } while (!stack.isEmpty() && !found);
 
-        System.out.println("=============     PATH     =============");
-        System.out.println(printPath(goals));
-        System.out.println("========================================");
+            }
+        } while (!super.getStack().isEmpty() && !super.isFound());
+
+        if(super.isFound()) {
+            System.out.println("=============     PATH     =============");
+            System.out.println(printPath(super.getGoals()));
+            System.out.println("========================================");
+        } else {
+            System.out.println("Goal node : "+ super.getGoals() +" not found within depth limit");
+        }
 
     }
 

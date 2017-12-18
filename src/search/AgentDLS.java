@@ -4,53 +4,56 @@ import interfaces.AbstractAgent;
 import resource.Edge;
 import resource.Node;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
+public class AgentDLS implements AbstractAgent{
 
-public class AgentDFSraw implements AbstractAgent {
-
-    private Node source, goals;
+    private int limit;
+    private Node source,goals;
     private Stack<Node> stack;
-    private boolean found;
+    private Set<Node> explored;
+    private static boolean found;
 
-    public AgentDFSraw(Node source, Node goals) {
+
+    public AgentDLS (Node source, Node goals, int limit){
         this.source = source;
         this.goals = goals;
-        this.stack = new Stack<Node>();
+        this.limit = limit;
         this.found = false;
-    }
-
-    protected AgentDFSraw(Node source, Node goals, Stack<Node> stack, boolean found) {
-        this.source = source;
-        this.goals = goals;
-        this.stack = stack;
-        this.found = found;
+        this.stack = new Stack<Node>();
+        this.explored = new HashSet<Node>();
     }
 
     @Override
-    public void search() {
+    public void search(){
         this.stack.push(source);
         Node current;
+
         do {
             current = stack.pop();
+            explored.add(current);
 
             if (current.getValue().equals(goals.getValue()))
                 found = true;
 
-            for (Edge e : current.getAdjacencies()) {
+            for(Edge e: current.getAdjacencies()){
                 Node child = e.getTarget();
-                stack.push(child);
-            }
-        } while (!stack.isEmpty() && !found);
+                if (!stack.contains(child) && !explored.contains(child)){
+                    child.setParent(current);
+                    if (child.depth(child)<=limit)
+                        stack.push(child);
 
-        if(found) {
-            System.out.println("=============     PATH     =============");
+                    }
+                }
+
+
+        } while(!stack.isEmpty() && !found);
+
+        if (found){
+            System.out.println("=============     PATH(Limit = "+ limit +")     =============");
             System.out.println(printPath(goals));
-            System.out.println("========================================");
-        } else {
+            System.out.println("=========================================================");
+        }else {
             System.out.println("Goal node : "+ goals +" not found within depth limit");
         }
     }
@@ -65,6 +68,15 @@ public class AgentDFSraw implements AbstractAgent {
         Collections.reverse(path);
 
         return path;
+
+    }
+
+    public int getLimit() {
+        return limit;
+    }
+
+    public void setLimit(int limit) {
+        this.limit = limit;
     }
 
     public Node getSource() {
@@ -91,6 +103,14 @@ public class AgentDFSraw implements AbstractAgent {
         this.stack = stack;
     }
 
+    public Set<Node> getExplored() {
+        return explored;
+    }
+
+    public void setExplored(Set<Node> explored) {
+        this.explored = explored;
+    }
+
     public boolean isFound() {
         return found;
     }
@@ -99,3 +119,5 @@ public class AgentDFSraw implements AbstractAgent {
         this.found = found;
     }
 }
+
+

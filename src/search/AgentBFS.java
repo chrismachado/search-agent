@@ -14,7 +14,7 @@ public class AgentBFS implements AbstractAgent {
     private Set<Node> explored;
     private boolean found;
 
-    public AgentBFS(Node source, Node goals, Set<Node> explored, boolean found) {
+    protected AgentBFS(Node source, Node goals, Set<Node> explored, boolean found) {
         this.source = source;
         this.goals = goals;
         this.explored = explored;
@@ -50,10 +50,13 @@ public class AgentBFS implements AbstractAgent {
             }
         } while(!queue.isEmpty() && !found);
 
-        System.out.println("=============     PATH     =============");
-        System.out.println(printPath(goals));
-        System.out.println("========================================");
-
+        if(found) {
+            System.out.println("=============     PATH     =============");
+            System.out.println(printPath(goals));
+            System.out.println("========================================");
+        } else {
+            System.out.println("Goal node : "+ goals +" not found within depth limit");
+        }
     }
 
     @Override

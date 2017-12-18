@@ -7,6 +7,15 @@ public class Node {
     private Edge[] adjacencies;
     private Node parent;
 
+    public int depth(Node node){
+        int depth = 0;
+        while (node.getParent()!=null){
+            node=node.getParent();
+            depth++;
+        }
+        return depth;
+    }
+
     public Node(String value) {
         this.value = value;
     }

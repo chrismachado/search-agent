@@ -2,17 +2,15 @@ package main;
 
 import interfaces.AbstractAgent;
 import resource.RomaniaMap;
-import search.AgentBFS;
-import search.AgentDFS;
-import search.AgentDFSraw;
-import search.AgentUCS;
+import resource.VacuumCleaner;
+import search.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        RomaniaMap romania = new RomaniaMap();
+        VacuumCleaner vc = new VacuumCleaner();
 
-        AbstractAgent agent = new AgentDFS(romania.oradea(),romania.craiova());
+        AbstractAgent agent = new AgentDFS(vc.dss(),vc.dll());
 
         agent.search();
 
