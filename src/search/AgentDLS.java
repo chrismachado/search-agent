@@ -33,28 +33,26 @@ public class AgentDLS implements AbstractAgent{
             current = stack.pop();
             visited.add(current);
 
-            if (current.depth(current)<(limit+1)){
-                if (current.equals(goals))
-                    found = true;
+            if (current.equals(goals))
+                found = true;
 
-                for(Edge e: current.getAdjacencies()){
-                    Node child = e.getTarget();
-                    if (!stack.contains(child) && !visited.contains(child)) {
-                        child.setParent(current);
+            for(Edge e: current.getAdjacencies()){
+                Node child = e.getTarget();
+                if (!stack.contains(child) && !visited.contains(child)){
+                    child.setParent(current);
+                    if (child.depth(child)<=limit)
                         stack.push(child);
-                    }
                 }
-
-            }else {
-                System.out.println("Goal Node not found within depth limit");
-                break;
             }
+            System.out.println(stack);
         }
 
-        if (found) {
+        if (found){
             System.out.println("=============     PATH     =============");
             System.out.println(printPath(goals));
             System.out.println("========================================");
+        }else {
+            System.out.println("Goal Node not found within depth limit");
         }
     }
 
