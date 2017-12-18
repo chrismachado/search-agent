@@ -10,7 +10,7 @@ public class Node {
     public int depth(Node node){
         int depth = 0;
         while (node.getParent()!=null){
-            node = node.getParent();
+            node=node.getParent();
             depth++;
         }
         return depth;

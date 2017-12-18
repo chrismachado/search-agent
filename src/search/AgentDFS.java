@@ -34,13 +34,15 @@ public class AgentDFS implements AbstractAgent {
                 found = true;
 
             for (Edge e : current.getAdjacencies()) {
-                Node child = e.getTarget();
+                    Node child = e.getTarget();
 
                 if (!explored.contains(child) && !stack.contains(child)) {
                     child.setParent(current);
                     stack.push(child);
                 }
+
             }
+
         } while (!stack.isEmpty() && !found);
 
         System.out.println("=============     PATH     =============");
