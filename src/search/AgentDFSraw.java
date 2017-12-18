@@ -46,10 +46,13 @@ public class AgentDFSraw implements AbstractAgent {
             }
         } while (!stack.isEmpty() && !found);
 
-        System.out.println("=============     PATH     =============");
-        System.out.println(printPath(goals));
-        System.out.println("========================================");
-
+        if(found) {
+            System.out.println("=============     PATH     =============");
+            System.out.println(printPath(goals));
+            System.out.println("========================================");
+        } else {
+            System.out.println("Goal node : "+ goals +" not found within depth limit");
+        }
     }
 
     @Override

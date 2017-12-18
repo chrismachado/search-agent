@@ -12,7 +12,7 @@ public class AgentDLS implements AbstractAgent{
     private Node source,goals;
     private Stack<Node> stack;
     private Set<Node> explored;
-    private boolean found;
+    private static boolean found;
 
 
     public AgentDLS (Node source, Node goals, int limit){
@@ -50,12 +50,11 @@ public class AgentDLS implements AbstractAgent{
         } while(!stack.isEmpty() && !found);
 
         if (found){
-            System.out.println("=============     PATH     =============");
+            System.out.println("=============     PATH(Limit = "+ limit +")     =============");
             System.out.println(printPath(goals));
-            System.out.println("========================================");
+            System.out.println("=========================================================");
         }else {
-            System.out.println("Goal Node not found within depth limit");
-
+            System.out.println("Goal node : "+ goals +" not found within depth limit");
         }
     }
 
