@@ -45,8 +45,8 @@ public class AgentDLS implements AbstractAgent{
 
                     }
                 }
-            }
-            System.out.println(stack);
+
+
         } while(!stack.isEmpty() && !found);
 
         if (found){
