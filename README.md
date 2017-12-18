@@ -27,5 +27,4 @@ The other agents are a variation of these two.
 - \+ AgentUCS (Uniform-Cost Search).
 
 
-
-        ![Romania's Map](http://i1.wp.com/aiandgames.com/wp-content/uploads/2015/12/romania-graph.png)
+![Romania's Map](http://i1.wp.com/aiandgames.com/wp-content/uploads/2015/12/romania-graph.png)
