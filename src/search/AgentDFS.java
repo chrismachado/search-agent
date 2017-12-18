@@ -36,9 +36,13 @@ public class AgentDFS extends AgentDFSraw {
             }
         } while (!super.getStack().isEmpty() && !super.isFound());
 
-        System.out.println("=============     PATH     =============");
-        System.out.println(printPath(super.getGoals()));
-        System.out.println("========================================");
+        if(super.isFound()) {
+            System.out.println("=============     PATH     =============");
+            System.out.println(printPath(super.getGoals()));
+            System.out.println("========================================");
+        } else {
+            System.out.println("Goal node : "+ super.getGoals() +" not found within depth limit");
+        }
 
     }
 
