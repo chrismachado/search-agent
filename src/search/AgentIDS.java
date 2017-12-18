@@ -1,29 +1,19 @@
 package search;
 
-import interfaces.AbstractAgent;
 import resource.Node;
 
-import java.util.List;
+public class AgentIDS extends AgentDLS{
 
-public class AgentIDS implements AbstractAgent{
-    private Node goals, source;
-
-    public AgentIDS(Node source, Node goals){
-        this.source = source;
-        this.goals = goals;
+    public AgentIDS(Node source, Node goals) {
+        super(source, goals, 0);
     }
 
     @Override
     public void search(){
-        int i;
-        for (i=0;;i++){
-            AgentDLS agent = new AgentDLS(source,goals,i);
+        for (int iterate=0; !super.isFound() ; iterate++){
+            AgentDLS agent = new AgentDLS(super.getSource(), super.getGoals(), iterate);
             agent.search();
         }
     }
 
-    @Override
-    public List<Node> printPath(Node target) {
-        return null;
-    }
 }

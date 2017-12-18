@@ -4,7 +4,10 @@ import interfaces.AbstractAgent;
 import resource.Edge;
 import resource.Node;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Stack;
 
 
 public class AgentDFSraw implements AbstractAgent {
@@ -18,6 +21,13 @@ public class AgentDFSraw implements AbstractAgent {
         this.goals = goals;
         this.stack = new Stack<Node>();
         this.found = false;
+    }
+
+    protected AgentDFSraw(Node source, Node goals, Stack<Node> stack, boolean found) {
+        this.source = source;
+        this.goals = goals;
+        this.stack = stack;
+        this.found = found;
     }
 
     @Override
@@ -54,5 +64,35 @@ public class AgentDFSraw implements AbstractAgent {
         return path;
     }
 
+    public Node getSource() {
+        return source;
+    }
 
+    public void setSource(Node source) {
+        this.source = source;
+    }
+
+    public Node getGoals() {
+        return goals;
+    }
+
+    public void setGoals(Node goals) {
+        this.goals = goals;
+    }
+
+    public Stack<Node> getStack() {
+        return stack;
+    }
+
+    public void setStack(Stack<Node> stack) {
+        this.stack = stack;
+    }
+
+    public boolean isFound() {
+        return found;
+    }
+
+    public void setFound(boolean found) {
+        this.found = found;
+    }
 }

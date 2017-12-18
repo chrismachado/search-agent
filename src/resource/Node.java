@@ -3,7 +3,7 @@ package resource;
 public class Node {
 
     private final String value;
-    private int pathCost,depth;
+    private int pathCost;
     private Edge[] adjacencies;
     private Node parent;
 

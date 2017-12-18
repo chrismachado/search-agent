@@ -14,7 +14,7 @@ public class AgentBFS implements AbstractAgent {
     private Set<Node> explored;
     private boolean found;
 
-    public AgentBFS(Node source, Node goals, Set<Node> explored, boolean found) {
+    protected AgentBFS(Node source, Node goals, Set<Node> explored, boolean found) {
         this.source = source;
         this.goals = goals;
         this.explored = explored;

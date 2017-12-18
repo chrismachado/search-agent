@@ -11,7 +11,7 @@ public class AgentDLS implements AbstractAgent{
     private int limit;
     private Node source,goals;
     private Stack<Node> stack;
-    private Set<Node> visited;
+    private Set<Node> explored;
     private boolean found;
 
 
@@ -21,7 +21,7 @@ public class AgentDLS implements AbstractAgent{
         this.limit = limit;
         this.found = false;
         this.stack = new Stack<Node>();
-        this.visited = new HashSet<Node>();
+        this.explored = new HashSet<Node>();
     }
 
     @Override
@@ -29,23 +29,23 @@ public class AgentDLS implements AbstractAgent{
         this.stack.push(source);
         Node current;
 
-        while(!stack.isEmpty() && !found){
+        do {
             current = stack.pop();
-            visited.add(current);
+            explored.add(current);
 
             if (current.equals(goals))
                 found = true;
 
             for(Edge e: current.getAdjacencies()){
                 Node child = e.getTarget();
-                if (!stack.contains(child) && !visited.contains(child)){
+                if (!stack.contains(child) && !explored.contains(child)){
                     child.setParent(current);
                     if (child.depth(child)<=limit)
                         stack.push(child);
                 }
             }
             System.out.println(stack);
-        }
+        } while(!stack.isEmpty() && !found);
 
         if (found){
             System.out.println("=============     PATH     =============");
@@ -67,6 +67,54 @@ public class AgentDLS implements AbstractAgent{
 
         return path;
 
+    }
+
+    public int getLimit() {
+        return limit;
+    }
+
+    public void setLimit(int limit) {
+        this.limit = limit;
+    }
+
+    public Node getSource() {
+        return source;
+    }
+
+    public void setSource(Node source) {
+        this.source = source;
+    }
+
+    public Node getGoals() {
+        return goals;
+    }
+
+    public void setGoals(Node goals) {
+        this.goals = goals;
+    }
+
+    public Stack<Node> getStack() {
+        return stack;
+    }
+
+    public void setStack(Stack<Node> stack) {
+        this.stack = stack;
+    }
+
+    public Set<Node> getExplored() {
+        return explored;
+    }
+
+    public void setExplored(Set<Node> explored) {
+        this.explored = explored;
+    }
+
+    public boolean isFound() {
+        return found;
+    }
+
+    public void setFound(boolean found) {
+        this.found = found;
     }
 }
 
